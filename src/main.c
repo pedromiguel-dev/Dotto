@@ -82,9 +82,9 @@ int dotto_main()
     char** args;
     int status = 1;
 
-
     system("clear");
     dotto_wellcome();
+
     do {
         printf("What do you want to do? Eg \"add: this thing\"\n");
 
@@ -96,6 +96,7 @@ int dotto_main()
 
     return status;
 }
+
 
 int main()
 {

@@ -3,8 +3,8 @@ CC = gcc
 
 all: start
 
-start: ./src/main.o ./src/functions.o
-	$(CC) -o main main.o functions.o
+start: ./src/main.o ./src/functions.o ./src/notes_linked.o
+	$(CC) -o main main.o functions.o notes_linked.o
 
 %.o: %.c
 	$(CC) -c $^
