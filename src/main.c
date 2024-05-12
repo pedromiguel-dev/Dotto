@@ -5,7 +5,7 @@
 
 #define DOTTO_LINE_BUFFER_SIZE 1024
 #define DOTTO_ARG_BUFFER_SIZE 64
-#define DOTTO_TOKEN_DELIM "\t\r\n\a: "
+#define DOTTO_TOKEN_DELIM "\t\r\n\a:"
 
 char* dotto_get_item()
 {

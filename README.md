@@ -4,24 +4,22 @@
 
 ### Tasks
 
-- [ ] Add a task
-- [ ] Remove a task
-- [ ] Display all tasks
+- [X] Add a task
+- [X] Remove a task
+- [X] Display all tasks
 - [ ] Save tasks to a file
 - [ ] Load tasks from a file
-- [ ] Error handling
-- [ ] Dynamic memory allocation
+- [X] Error handling
+- [X] Dynamic memory allocation
 
 ### Dependencies
-
 - gcc
 - make
 
 ### How to run
 
 1. run `$ make`
-2. run `$ ./build/main`
-3. alternatively, run `$ make run
+2. run `$ ./main`
 
 ### Requirements
 
