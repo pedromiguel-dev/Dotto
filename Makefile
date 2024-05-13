@@ -1,16 +1,24 @@
-
 CC = gcc
+SRCDIR=src
+BUILDDIR=build
+PROGRAM=Dotto
 
-all: start
+SOURCES := $(wildcard $(SRCDIR)/*.c)
+BUILD := $(SOURCES:$(SRCDIR)/%.c=./$(BUILDDIR)/%.o)
 
-start: ./src/main.o ./src/functions.o ./src/notes_linked.o
-	$(CC) -o main main.o functions.o notes_linked.o
-
-%.o: %.c
-	$(CC) -c $^
+all: dir_folder clean start run
 
 dir_folder:
 	mkdir -p ./build/
 
 clean:
-	rm -f $(EXEC)
+	rm -f ./build/*.o
+
+start: $(BUILD)
+	$(CC) -o $(PROGRAM) $^
+
+$(BUILDDIR)/%.o: $(SRCDIR)/%.c
+	$(CC) -c -o $@ $^
+
+run:
+	./$(PROGRAM)

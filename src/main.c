@@ -1,4 +1,4 @@
-#include "funcions.h"
+#include "../includes/functions.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -86,7 +86,7 @@ int dotto_main()
     dotto_wellcome();
 
     do {
-        printf("What do you want to do? Eg \"add: this thing\"\n");
+        printf("Type for exemple \"add: this thing\"\n");
 
         line = dotto_get_item();
         args = dotto_split_line(line);

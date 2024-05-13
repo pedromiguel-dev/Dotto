@@ -1,4 +1,4 @@
-#include "notes_linked.h"
+#include "../includes/notes_linked.h"
 #include <stdio.h>
 #include <stdlib.h>
 

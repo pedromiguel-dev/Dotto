@@ -1,5 +1,5 @@
-#ifndef NOTES_LIKED_LIST
-#define NOTES_LIKED_LIST
+#ifndef NOTES_LIKED
+#define NOTES_LIKED
 
 typedef struct note note_t;
 
