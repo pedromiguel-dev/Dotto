@@ -1,13 +1,7 @@
 #include "../includes/notes_linked.h"
 #include <stdio.h>
 #include <stdlib.h>
-
-struct note {
-    int index;
-    char* text;
-    struct note* next;
-    struct note* prev;
-};
+#include <string.h>
 
 void print_list(note_t* head) 
 {
@@ -27,7 +21,7 @@ void dotto_print_notes(note_t* tail)
     note_t* temporary = tail;
 
     while (temporary != NULL) {
-        printf("\nNote %d: %s\n", index, temporary->text);
+        printf("Note %d: %s\n", index, temporary->text);
         temporary = temporary->prev;
         index++;
     }
@@ -35,6 +29,7 @@ void dotto_print_notes(note_t* tail)
 
 note_t* dotto_create_note(char* text)
 {
+    
     note_t* result = malloc(sizeof(note_t));
     result->text = text;
     result->next = NULL;

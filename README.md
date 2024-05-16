@@ -7,8 +7,8 @@
 - [X] Add a task
 - [X] Remove a task
 - [X] Display all tasks
-- [ ] Save tasks to a file
-- [ ] Load tasks from a file
+- [X] Save tasks to a file
+- [X] Load tasks from a file
 - [X] Error handling
 - [X] Dynamic memory allocation
 

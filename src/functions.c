@@ -3,10 +3,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <time.h>
 
-note_t* HEAD = NULL;
-note_t* TAIL = NULL;
+note_t* DOTTO_LIST_HEAD = NULL;
+note_t* DOTTO_LIST_TAIL = NULL;
 
 void dotto_wellcome() 
 {
@@ -18,18 +17,18 @@ void dotto_wellcome()
 }
 int dotto_add(char **args)
 {
-    printf("adding this: %s\n", args[1]);
+    printf("Adding this: %s\n", args[1]);
     note_t* note = dotto_create_note(args[1]);
 
-    if (HEAD == NULL) {
-        TAIL = note;
+    if (DOTTO_LIST_HEAD == NULL) {
+        DOTTO_LIST_TAIL = note;
     }
 
-    return dotto_inset_note_at_head(note, &HEAD) == NULL? 0 : 1;
+    return dotto_inset_note_at_head(note, &DOTTO_LIST_HEAD) == NULL? 0 : 1;
 }
 int dotto_see(char **args)
 {;
-    dotto_print_notes(TAIL);
+    dotto_print_notes(DOTTO_LIST_TAIL);
     return 1;
 }
 int dotto_clear(char **args)
@@ -41,10 +40,10 @@ int dotto_clear(char **args)
 int dotto_remove(char **args)
 {
     int note_index = atoi(args[1]);
-    note_t* note = dotto_find_note_from_tail(note_index, TAIL);
+    note_t* note = dotto_find_note_from_tail(note_index, DOTTO_LIST_TAIL);
 
     if (note != NULL) {
-        dotto_remove_note_from_list(note, &HEAD, &TAIL);
+        dotto_remove_note_from_list(note, &DOTTO_LIST_HEAD, &DOTTO_LIST_TAIL);
         printf("Remove note %d.\n", note_index);
     } else 
         printf("Index has no notes\n");
@@ -65,10 +64,10 @@ char *dotto_bultin_named_functions[] = {
   "ditch"
 };
 
-int dotto_num_builtins() {
+int dotto_num_builtins() 
+{
   return sizeof(dotto_bultin_named_functions) / sizeof(char *);
 }
-
 int dotto_execute(char** args)
 {
 

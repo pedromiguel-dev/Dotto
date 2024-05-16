@@ -6,19 +6,19 @@ PROGRAM=Dotto
 SOURCES := $(wildcard $(SRCDIR)/*.c)
 BUILD := $(SOURCES:$(SRCDIR)/%.c=./$(BUILDDIR)/%.o)
 
-all: dir_folder clean start run
+all: dir_folder clean start
 
 dir_folder:
-	mkdir -p ./build/
+	mkdir -p $(BUILDDIR)/
 
 clean:
-	rm -f ./build/*.o
+	rm -f $(BUILDDIR)/*.o
 
 start: $(BUILD)
 	$(CC) -o $(PROGRAM) $^
 
 $(BUILDDIR)/%.o: $(SRCDIR)/%.c
-	$(CC) -c -o $@ $^
+	$(CC) -c -o $@ $^ -g
 
 run:
 	./$(PROGRAM)

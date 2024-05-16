@@ -1,9 +1,18 @@
 #ifndef NOTES_LIKED
 #define NOTES_LIKED
 
+struct note {
+    int index;
+    char* text;
+    struct note* next;
+    struct note* prev;
+};
+
 typedef struct note note_t;
 
 void dotto_print_notes(note_t* tail);
+
+void print_list(note_t* head);
 
 note_t* dotto_create_note(char* text);
 

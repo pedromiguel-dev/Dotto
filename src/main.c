@@ -1,4 +1,5 @@
 #include "../includes/functions.h"
+#include "../includes/load_db.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -85,13 +86,14 @@ int dotto_main()
     system("clear");
     dotto_wellcome();
 
+    dotto_load_from_file();
     do {
+        dotto_save_notes(DOTTO_LIST_TAIL);
         printf("Type for exemple \"add: this thing\"\n");
 
         line = dotto_get_item();
         args = dotto_split_line(line);
         status = dotto_execute (args);
-
     } while (status);
 
     return status;
