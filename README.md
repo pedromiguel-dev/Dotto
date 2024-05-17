@@ -18,8 +18,8 @@
 
 ### How to run
 
-1. run `$ make`
-2. run `$ ./main`
+1. build `$ make`
+2. run `$ make run`
 
 ### Requirements
 
