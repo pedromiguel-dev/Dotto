@@ -33,7 +33,14 @@ int dotto_see(char **args)
 }
 int dotto_clear(char **args)
 {
+    
+#ifdef _WIN32
+    system("cls");
+#endif
+#ifdef linux
     system("clear");
+#endif
+
     dotto_wellcome();
     return 1;
 }

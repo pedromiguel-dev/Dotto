@@ -83,7 +83,13 @@ int dotto_main()
     char** args;
     int status = 1;
 
+#ifdef _WIN32
+    system("cls");
+#endif
+#ifdef linux
     system("clear");
+#endif
+
     dotto_wellcome();
 
     dotto_load_from_file();
