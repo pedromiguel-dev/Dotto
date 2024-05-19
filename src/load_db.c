@@ -30,9 +30,8 @@ void dotto_load_from_file()
 
         args[0] = "add";
         while (fgets(myString, 300, fptr)) {
-
-            char * copy = malloc(strlen(myString) + 1); 
-            strcpy(copy, myString);
+            
+            char* copy = strdup(myString);
             copy[strcspn(copy, "\n")] = '\0';
 
             args[1] = copy;
